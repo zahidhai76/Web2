@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="payStyles.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js" defer="true"></script>
+        <script src="paycalcs.js" defer="true"></script>
+        <title>Salary Calculator</title>
+    </head>
+    <body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Salary Calculator</h1>
+        <h5 id="currentDate"></h5>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a class="links" href="index.html">Home</a>
+        <a class="links" href="page 2.html">API</a>
+        <a class="links" href="page 3.html">Salary Calculator</a>
+        <a class="links" href="page 4.html">Page 4</a>
+    </div>
+     <!-- The flexible grid (content) -->
+    <div class="flex-container-setup">
+        <div id="one">
+            Tax Code:
+            <select name="tax-code" id="tax-code">
+                <option value="1257L">1257L (Basic Rate)</option>
+                <option value="1170L">1170L</option>
+            </select>
+        </div>
+        <div id="two">                        
+            Student Loan Repayment Plan:
+            <select name="RepaymentPlan" id="RepaymentPlan">
+                <option value="PlanOne">Repayment Plan 1 (Graduated before September 2012)</option>
+                <option value="PlanTwo" selected="selected">Repayment Plan 2 (Graduated after September 2012)</option>
+            </select>
+        </div>
+        <div id="three">                    
+            Pension Contribution (%):
+            <input type="number" value="0.00" id="pension-contribution" class="pension-contribution" name="pension-contribution">
+        </div>
+    </div>
+    <div class="flex-container-month">
+        <div class="gross">
+            <select name="Period" id="period">
+                <option value="Annually">Gross Annual Salary</option>
+                <option value="Monthly" selected="selected">Gross Monthly Salary</option>
+            </select>   
+            <label for="gross-monthly">Gross Monthly:</label>
+            <input type="number" value="0.00" id="gross-monthly" class="gross-monthly" name="gross-monthly">
+            <label for="gross-monthly">Gross Annually:</label>
+            <input type="number" value="0.00" id="gross-annually" class="gross-annually" name="gross-annually" disabled>
+        </div>   
+    </div>
+    <div class="flex-container-calculate">
+        <div> 
+            <button class="buttonCalc" type="button">Calculate Pay</button>
+        </div>       
+    </div>
+    <div class="flex-container-results">
+        <div>                    
+            <p class="column1">Amount taxable at 20% </p>
+            <p>
+                <p class="labels">Yearly:<span class="results taxable20" id="tax20Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results taxable20" id="tax20">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results taxable20" id="tax20Weekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>                    
+            <p class="column1">Amount taxable at 40% </p>
+            <p>
+                <p class="labels">Yearly:<span class="results taxable40" id="tax40Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results taxable40" id="tax40">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results taxable40" id="tax40Weekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>  
+            <p class="column1">NI applied on </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="NI-applied-on-Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="NI-applied-on">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="NI-applied-on-Weekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>
+            <p class="column1">Student Loan applied on </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="SL-applied-on-Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="SL-applied-on">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="SL-applied-on-Weekly">£0.00</span></p>
+            </p>
+        </div>
+        <div> 
+            <p class="column1">Tax at 20%  </p>
+            <p>
+                <p class="labels">Yearly:<span class="results taxed20" id="taxed20Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results taxed20" id="taxed20">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results taxed20" id="taxed20Weekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>
+            <p class="column1">Tax at 40% </p>
+            <p>
+                <p class="labels">Yearly:<span class="results taxed40" id="taxed40Yearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results taxed40" id="taxed40">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results taxed40" id="taxed40Weekly">£0.00</span></p>
+            </p>
+        </div> 
+    </div>
+    <div class="flex-container-deductions">
+        <div>
+            <p class="column1">Total Tax </p>
+            <p>
+                <p class="labels">Yearly:<span class="results taxTotals" id="taxYearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results taxTotals" id="tax">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results taxTotals" id="taxWeekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>
+            <p class="column1">National Insurance </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="NIYearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="NI">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="NIWeekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>
+            <p class="column1">Student Loan </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="SLYearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="SL">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="SLWeekly">£0.00</span></p>
+            </p>
+        </div>
+        <div>
+            <p class="column1">Pension Contribution </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="pensionYearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="pension">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="pensionWeekly">£0.00</span></p>
+            </p>
+        </div>
+    </div>
+    <div class="flex-container-take-home">
+        <div>
+            <p class="column1">Take Home Pay </p>
+            <p>
+                <p class="labels">Yearly:<span class="results" id="TakeHomeYearly">£0.00</span></p>
+                <p class="labels">Monthly:<span class="results" id="TakeHome">£0.00</span></p>
+                <p class="labels">Weekly:<span class="results" id="TakeHomeWeekly">£0.00</span></p>
+            </p>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- Footer -->
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+    </body>
+</html>

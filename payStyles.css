@@ -1,0 +1,104 @@
+.flex-container-setup, .flex-container-results, .flex-container-deductions, .flex-container-take-home, .flex-container-month {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.flex-container-setup > div,
+.flex-container-results > div,
+.flex-container-deductions > div, 
+.flex-container-take-home > div,
+.flex-container-month > div {
+    background-color: #f0d9d9;
+    flex-grow: 1;
+    margin: 5px;
+    padding: 15px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.flex-container-calculate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.flex-container-calculate > div {
+    text-align: center;
+    flex-grow: 1;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.buttonCalc {
+    text-align: center;
+    font-weight: bold;
+	width: 100%;
+	height: 50px; 
+    color: white;
+	background-image: linear-gradient(to bottom right, #921701, #921701b7);
+	border-style: solid;
+    border-radius: 8px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.buttonCalc:hover {
+	color: #c0d1d8;
+    background-color: #723126d3;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .flex-container-setup, .flex-container-results, .flex-container-calculate, .flex-container-deductions, .flex-container-take-home, .flex-container-month {   
+      flex-direction: column;
+      flex-grow: 1;
+    }
+}
+
+#period {
+    max-width:200px;
+    overflow:scroll;
+}
+
+.column1 {
+    font-weight: bold;
+    font-size: large;
+}
+
+.results {
+    margin:10px;
+    font-size: medium;
+}
+
+.labels {
+    font-size: medium;
+}
+
+#one {
+    order: 1;
+}
+
+#two {
+    order: 2;
+}
+
+#three {
+    order: 3;
+}
+
+#four {
+    font-size: medium;
+}
+
+#gross-monthly, #gross-annually, #period {
+    width:100%;
+    display: block;
+    font-size: medium;
+    margin: 0 auto;
+}
