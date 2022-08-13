@@ -15,7 +15,9 @@ currentDate();
 
 let numberInput = document.querySelector('#numberInput');
 
-numberInput.addEventListener('input', FetchAPIRequest)
+if(numberInput){
+numberInput.addEventListener('input', FetchAPIRequest, false)
+}
 
 function FetchAPIRequest(){
     let number = numberInput.value;
@@ -27,5 +29,4 @@ function FetchAPIRequest(){
         document.getElementById("NumberText").innerHTML = data;
     })
     .catch(err => console.log(err));
-
 }

@@ -2,10 +2,12 @@
 <html>
 	<head>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="todo.css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="script.js" defer="true"></script>
-        <title>Test Site</title>
+        <script src="todo.js" defer="true"></script>
+        <title>To Do List</title>
     </head>
     <body>
     <!-- Header -->
@@ -18,19 +20,22 @@
         <a class="links" href="index.html">Home</a>
         <a class="links" href="page 2.html">API</a>
         <a class="links" href="page 3.html">Salary Calculator</a>
-        <a class="links" href="page 4.html">Page 4</a>
+        <a class="links" href="page 4.html">To Do List</a>
     </div>
      <!-- The flexible grid (content) -->
-    <div class="row">
-        <div class="main">
-            <h2>TITLE HEADING 4</h2>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            <br>
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <div class="flexGrid">
+        <div class="mainInput">
+            <input type="text" id="myInput" placeholder="Add an item...">
+            <button class="addButton">Add</button>
+        </div>
+        <div class="itemList">
+            <ul id="myList">
+                <li class="checked">Hit the gym</li>
+                <li>Pay bills</li>
+                <li>Buy food</li>
+                <li>Read a book</li>
+                <li>Clean room</li>
+            </ul>
         </div>
     </div> 
     <!-- Footer -->

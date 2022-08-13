@@ -121,8 +121,8 @@ function taxable(){
 function NIApplied(){
     var NIFreeAmount, NIAmount, NIAmountYearly, NIAmountWeekly, NI, NIYearly, NIWeekly;
     let gross = document.getElementById("gross-monthly").value - PensionContribution();
-    if(gross >= 823.01){
-        NIFreeAmount = 823.01
+    if(gross >= 1047.50){
+        NIFreeAmount = 1047.50
         NIAmount = gross - NIFreeAmount;
     } 
     else {

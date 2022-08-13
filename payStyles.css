@@ -15,7 +15,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
 }
 
@@ -101,4 +101,10 @@
     display: block;
     font-size: medium;
     margin: 0 auto;
+}
+
+select, input {
+    width: fit-content;
+    border-radius: 7.5px;
+    padding: 2.5px;
 }
